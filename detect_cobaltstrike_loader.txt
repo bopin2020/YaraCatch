@@ -1,0 +1,12 @@
+rule detect_cobaltstrike_loader{
+    meta:
+        description = "detect cobaltstrike loader"
+        author = "bopin"
+        date = "2023-07-13"
+        threat_level = 10
+    strings:
+	$reflectiveLoader		= "reflectiveloader" ascii wide nocase
+
+    condition:
+        any of them
+}
